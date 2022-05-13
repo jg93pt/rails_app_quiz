@@ -51,7 +51,7 @@ RSpec.describe JobsController, type: :controller do
     it 'renders specific job by id in JSON' do
       job = Job.create(url: 'www.roni.com', employer_name: 'Roni', employer_description: 'Developer', job_title: 'App Developer', job_description: 'Developer of Mobile Apps', year_of_experience: 2, education_requirement: 'Associate Degree', industry: 'IT', base_salary: 1000, employment_type_id: 1997)
 
-      get :index
+      get :show, params: { id: job.id }
 
       expect(Job.count).to eq(1)
 
