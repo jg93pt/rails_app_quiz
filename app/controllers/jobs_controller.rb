@@ -12,4 +12,10 @@ class JobsController < ApplicationController
     @new_job = Job.all
     render 'jobs/index.jbuilder'
   end
+
+  #GET /jobs/:id
+  def show
+    @new_job = Job.find_by(id: params[:id])
+    render 'jobs/show.jbuilder'
+  end
 end
